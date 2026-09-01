@@ -1,16 +1,13 @@
-## Hi there 👋
+# Saurabh Ghodekar — .NET Full Stack Developer Portfolio
 
-<!--
-**SaurabhGhodekar/SaurabhGhodekar** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+A single-page professional portfolio built with plain HTML, CSS and JavaScript (no frameworks, no build step).
 
-Here are some ideas to get you started:
+portfolio/
+├── index.html # complete single-page portfolio (HTML, CSS, JS all in one)
+├── SaurabhGhodekar.jpg # profile photo
+├── SaurabhGhodekar.pdf # downloadable resume
+└── README.md
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+## 🚀 Run it
+
+Just open `index.html` in any modern browser — no server or build process required.
