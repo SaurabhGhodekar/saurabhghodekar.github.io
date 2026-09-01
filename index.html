@@ -1,3589 +1,1285 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
     <meta charset="UTF-8">
-
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
-
-    <title>
-        Saurabh Ghodekar | .NET Full Stack Developer
-    </title>
-
-    <meta name="description"
-          content="Saurabh Ghodekar - .NET Full Stack Developer with 4+ years of experience in C#, .NET, ASP.NET Core, Web API, SQL Server, Angular, Windows Applications and enterprise software development.">
-
-
-    <!-- =========================================================
-         GOOGLE FONT
-    ========================================================== -->
-
-    <link rel="preconnect"
-          href="https://fonts.googleapis.com">
-
-    <link rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossorigin>
-
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
-          rel="stylesheet">
-
-
-    <!-- =========================================================
-         BOOTSTRAP ICONS
-    ========================================================== -->
-
-    <link rel="stylesheet"
-          href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-
-
-    <!-- =========================================================
-         STYLES
-    ========================================================== -->
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saurabh Ghodekar | .NET Full Stack Developer</title>
+    <meta name="description" content="Saurabh Ghodekar - .NET Full Stack Developer with 4+ years of experience in C#, .NET, ASP.NET Core, Web API, SQL Server, Angular, Windows Applications and enterprise software development.">
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <style>
-
-        /* =====================================================
-           ROOT
-        ====================================================== */
-
+        /* ============================================================
+           ROOT VARIABLES
+        ============================================================ */
         :root {
-
             --bg: #071426;
-
             --bg-light: #0b1b30;
-
             --card: #0d2037;
-
             --card-light: #112943;
-
             --border: rgba(148, 163, 184, 0.16);
-
             --text: #f5f7fb;
-
             --muted: #91a4bd;
-
             --blue: #3b8df8;
-
             --blue-light: #65a8ff;
-
             --green: #31d88a;
-
             --max-width: 1200px;
-
         }
-
-
-        /* =====================================================
-           RESET
-        ====================================================== */
-
+        /* ============================================================
+           RESET & BASE
+        ============================================================ */
         * {
-
             margin: 0;
-
             padding: 0;
-
             box-sizing: border-box;
-
         }
-
-
         html {
-
             scroll-behavior: smooth;
-
         }
-
-
         body {
-
             font-family: "Inter", sans-serif;
-
             background: var(--bg);
-
             color: var(--text);
-
             line-height: 1.6;
-
         }
-
-
         a {
-
             color: inherit;
-
             text-decoration: none;
-
         }
-
-
         img {
-
             max-width: 100%;
-
             display: block;
-
         }
-
-
         .container {
-
-            width: min(
-                var(--max-width),
-                calc(100% - 44px)
-            );
-
+            width: min(var(--max-width), calc(100% - 44px));
             margin: auto;
-
         }
-
-
-        /* =====================================================
-           HEADER
-        ====================================================== */
-
+        /* ============================================================
+           HEADER / NAVBAR
+        ============================================================ */
         header {
-
             position: sticky;
-
             top: 0;
-
             z-index: 1000;
-
-            background:
-                rgba(7, 20, 38, 0.92);
-
+            background: rgba(7, 20, 38, 0.92);
             backdrop-filter: blur(14px);
-
-            border-bottom:
-                1px solid rgba(
-                    148,
-                    163,
-                    184,
-                    0.08
-                );
-
+            border-bottom: 1px solid rgba(148, 163, 184, 0.08);
         }
-
-
         .navbar {
-
             height: 80px;
-
             display: flex;
-
             align-items: center;
-
             justify-content: space-between;
-
         }
-
-
         .brand {
-
             display: flex;
-
             align-items: center;
-
             gap: 13px;
-
         }
-
-
         .brand-icon {
-
             width: 44px;
-
             height: 44px;
-
             display: flex;
-
             align-items: center;
-
             justify-content: center;
-
-            border:
-                1px solid rgba(
-                    59,
-                    141,
-                    248,
-                    0.4
-                );
-
+            border: 1px solid rgba(59, 141, 248, 0.4);
             border-radius: 10px;
-
-            color:
-                var(--blue-light);
-
-            background:
-                rgba(
-                    59,
-                    141,
-                    248,
-                    0.08
-                );
-
+            color: var(--blue-light);
+            background: rgba(59, 141, 248, 0.08);
             font-size: 22px;
-
         }
-
-
         .brand-text h3 {
-
             font-size: 15px;
-
             font-weight: 700;
-
             line-height: 1.2;
-
         }
-
-
         .brand-text span {
-
             display: block;
-
             margin-top: 3px;
-
-            color:
-                var(--muted);
-
+            color: var(--muted);
             font-size: 12px;
-
         }
-
-
-        /* =====================================================
-           NAVIGATION
-        ====================================================== */
-
         .nav-links {
-
             display: flex;
-
             align-items: center;
-
             gap: 36px;
-
         }
-
-
         .nav-links a {
-
             position: relative;
-
-            color:
-                #8799b0;
-
+            color: #8799b0;
             font-size: 14px;
-
             font-weight: 600;
-
-            transition:
-                color 0.2s ease;
-
+            transition: color 0.2s ease;
         }
-
-
         .nav-links a:hover {
-
             color: white;
-
         }
-
-
         .nav-links a.active {
-
             color: white;
-
         }
-
-
         .nav-links a.active::after {
-
             content: "";
-
             position: absolute;
-
             left: 0;
-
             right: 0;
-
             bottom: -12px;
-
             height: 2px;
-
-            background:
-                var(--blue-light);
-
+            background: var(--blue-light);
         }
-
-
-        /* =====================================================
-           RESUME BUTTON
-        ====================================================== */
-
         .resume-btn {
-
             display: inline-flex;
-
             align-items: center;
-
             gap: 9px;
-
-            padding:
-                11px 17px;
-
-            border:
-                1px solid rgba(
-                    59,
-                    141,
-                    248,
-                    0.55
-                );
-
+            padding: 11px 17px;
+            border: 1px solid rgba(59, 141, 248, 0.55);
             border-radius: 9px;
-
             color: white;
-
-            background:
-                rgba(
-                    59,
-                    141,
-                    248,
-                    0.08
-                );
-
+            background: rgba(59, 141, 248, 0.08);
             font-size: 14px;
-
             font-weight: 600;
-
-            transition:
-                all 0.2s ease;
-
+            transition: all 0.2s ease;
         }
-
-
         .resume-btn:hover {
-
-            background:
-                var(--blue);
-
-            border-color:
-                var(--blue);
-
+            background: var(--blue);
+            border-color: var(--blue);
         }
-
-
-        /* =====================================================
+        /* ============================================================
            HERO
-        ====================================================== */
-
+        ============================================================ */
         .hero {
-
-            min-height:
-                calc(100vh - 80px);
-
+            min-height: calc(100vh - 80px);
             display: flex;
-
             align-items: center;
-
-            padding:
-                62px 0 54px;
-
+            padding: 62px 0 54px;
         }
-
-
         .hero-grid {
-
             display: grid;
-
-            grid-template-columns:
-                1.15fr 0.85fr;
-
+            grid-template-columns: 1.15fr 0.85fr;
             align-items: center;
-
             gap: 70px;
-
         }
-
-
         .hero-highlights {
-
             display: flex;
-
             align-items: center;
-
             flex-wrap: wrap;
-
             gap: 12px;
-
             margin-bottom: 28px;
-
         }
-
-
         .availability {
-
             width: fit-content;
-
             display: inline-flex;
-
             align-items: center;
-
             gap: 9px;
-
-            padding:
-                8px 14px;
-
-            border:
-                1px solid rgba(
-                    49,
-                    216,
-                    138,
-                    0.22
-                );
-
+            padding: 8px 14px;
+            border: 1px solid rgba(49, 216, 138, 0.22);
             border-radius: 30px;
-
-            background:
-                rgba(
-                    49,
-                    216,
-                    138,
-                    0.06
-                );
-
-            color:
-                #51e49b;
-
+            background: rgba(49, 216, 138, 0.06);
+            color: #51e49b;
             font-size: 13px;
-
             font-weight: 600;
-
         }
-
-
         .availability-dot {
-
             width: 7px;
-
             height: 7px;
-
             border-radius: 50%;
-
-            background:
-                var(--green);
-
+            background: var(--green);
         }
-
-
         .experience-badge {
-
             display: inline-flex;
-
             align-items: center;
-
             gap: 7px;
-
-            padding:
-                8px 14px;
-
-            border:
-                1px solid rgba(
-                    59,
-                    141,
-                    248,
-                    0.25
-                );
-
+            padding: 8px 14px;
+            border: 1px solid rgba(59, 141, 248, 0.25);
             border-radius: 30px;
-
-            background:
-                rgba(
-                    59,
-                    141,
-                    248,
-                    0.06
-                );
-
-            color:
-                #a9c9f5;
-
+            background: rgba(59, 141, 248, 0.06);
+            color: #a9c9f5;
             font-size: 13px;
-
         }
-
-
         .experience-badge i {
-
-            color:
-                var(--blue-light);
-
+            color: var(--blue-light);
         }
-
-
         .experience-badge strong {
-
             color: white;
-
             font-weight: 700;
-
         }
-
-
         .experience-badge span {
-
-            color:
-                #91a4bd;
-
+            color: #91a4bd;
         }
-
-
         .hero h1 {
-
             max-width: 690px;
-
-            font-size:
-                clamp(
-                    52px,
-                    5.3vw,
-                    74px
-                );
-
+            font-size: clamp(52px, 5.3vw, 74px);
             line-height: 0.99;
-
-            letter-spacing:
-                -3.6px;
-
+            letter-spacing: -3.6px;
             font-weight: 800;
-
         }
-
-
         .hero h1 .blue {
-
-            color:
-                var(--blue-light);
-
+            color: var(--blue-light);
         }
-
-
         .hero-subtitle {
-
             margin-top: 31px;
-
-            color:
-                #d4deeb;
-
+            color: #d4deeb;
             font-size: 25px;
-
             font-weight: 600;
-
         }
-
-
         .hero-subtitle .separator {
-
-            color:
-                #71859f;
-
-            margin:
-                0 5px;
-
+            color: #71859f;
+            margin: 0 5px;
         }
-
-
         .hero-subtitle .experience-text {
-
-            color:
-                var(--blue-light);
-
+            color: var(--blue-light);
         }
-
-
         .hero-description {
-
             max-width: 640px;
-
             margin-top: 22px;
-
-            color:
-                #8fa3bd;
-
+            color: #8fa3bd;
             font-size: 16px;
-
             line-height: 2.05;
-
         }
-
-
         .hero-buttons {
-
             display: flex;
-
             flex-wrap: wrap;
-
             gap: 12px;
-
             margin-top: 32px;
-
         }
-
-
         .primary-btn,
         .secondary-btn {
-
             display: inline-flex;
-
             align-items: center;
-
             justify-content: center;
-
             gap: 9px;
-
-            padding:
-                13px 19px;
-
+            padding: 13px 19px;
             border-radius: 8px;
-
             font-size: 14px;
-
             font-weight: 600;
-
-            transition:
-                all 0.2s ease;
-
+            transition: all 0.2s ease;
         }
-
-
         .primary-btn {
-
-            background:
-                var(--blue);
-
+            background: var(--blue);
             color: white;
-
         }
-
-
         .primary-btn:hover {
-
-            background:
-                #2e7fe5;
-
+            background: #2e7fe5;
         }
-
-
         .secondary-btn {
-
-            border:
-                1px solid var(--border);
-
-            background:
-                rgba(
-                    255,
-                    255,
-                    255,
-                    0.025
-                );
-
-            color:
-                #dce5f0;
-
+            border: 1px solid var(--border);
+            background: rgba(255, 255, 255, 0.025);
+            color: #dce5f0;
         }
-
-
         .secondary-btn:hover {
-
-            border-color:
-                rgba(
-                    59,
-                    141,
-                    248,
-                    0.4
-                );
-
-            background:
-                rgba(
-                    59,
-                    141,
-                    248,
-                    0.06
-                );
-
+            border-color: rgba(59, 141, 248, 0.4);
+            background: rgba(59, 141, 248, 0.06);
         }
-
-
-        /* =====================================================
+        /* ============================================================
            PROFILE
-        ====================================================== */
-
+        ============================================================ */
         .profile-wrapper {
-
             display: flex;
-
             justify-content: center;
-
         }
-
-
         .profile-card {
-
             width: 410px;
-
             padding: 14px;
-
-            border:
-                1px solid rgba(
-                    148,
-                    163,
-                    184,
-                    0.16
-                );
-
+            border: 1px solid rgba(148, 163, 184, 0.16);
             border-radius: 24px;
-
-            background:
-                #10243b;
-
-            box-shadow:
-                0 25px 60px
-                rgba(
-                    0,
-                    0,
-                    0,
-                    0.25
-                );
-
+            background: #10243b;
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.25);
         }
-
-
         .profile-photo {
-
             width: 100%;
-
             height: 440px;
-
             object-fit: cover;
-
-            object-position:
-                center top;
-
+            object-position: center top;
             border-radius: 17px;
-
-            background:
-                #edf1f6;
-
+            background: #edf1f6;
         }
-
-
         .profile-info {
-
             display: flex;
-
             align-items: center;
-
-            justify-content:
-                space-between;
-
-            padding:
-                19px 8px 5px;
-
+            justify-content: space-between;
+            padding: 19px 8px 5px;
         }
-
-
         .profile-name {
-
             font-size: 16px;
-
             font-weight: 700;
-
         }
-
-
         .profile-role {
-
             margin-top: 3px;
-
-            color:
-                var(--muted);
-
+            color: var(--muted);
             font-size: 12px;
-
         }
-
-
         .profile-location {
-
             display: flex;
-
             align-items: center;
-
             gap: 6px;
-
-            color:
-                #93a9c2;
-
+            color: #93a9c2;
             font-size: 12px;
-
         }
-
-
         .profile-location i {
-
-            color:
-                var(--blue-light);
-
+            color: var(--blue-light);
         }
-
-
-        /* =====================================================
+        /* ============================================================
            SECTIONS
-        ====================================================== */
-
+        ============================================================ */
         section {
-
             scroll-margin-top: 90px;
-
-            padding:
-                80px 0;
-
+            padding: 80px 0;
         }
-
-
         .section-header {
-
-            margin-bottom:
-                38px;
-
+            margin-bottom: 38px;
         }
-
-
         .section-label {
-
-            margin-bottom:
-                9px;
-
-            color:
-                var(--blue-light);
-
+            margin-bottom: 9px;
+            color: var(--blue-light);
             font-size: 13px;
-
             font-weight: 700;
-
-            text-transform:
-                uppercase;
-
-            letter-spacing:
-                1.5px;
-
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
         }
-
-
         .section-title {
-
             font-size: 35px;
-
             line-height: 1.2;
-
-            letter-spacing:
-                -1.2px;
-
+            letter-spacing: -1.2px;
         }
-
-
         .section-description {
-
             max-width: 680px;
-
             margin-top: 12px;
-
-            color:
-                var(--muted);
-
+            color: var(--muted);
             font-size: 15px;
-
         }
-
-
-        /* =====================================================
+        /* ============================================================
            ABOUT
-        ====================================================== */
-
+        ============================================================ */
         .about {
-
-            border-top:
-                1px solid rgba(
-                    148,
-                    163,
-                    184,
-                    0.07
-                );
-
+            border-top: 1px solid rgba(148, 163, 184, 0.07);
         }
-
-
         .about-grid {
-
             display: grid;
-
-            grid-template-columns:
-                1fr 1fr;
-
+            grid-template-columns: 1fr 1fr;
             gap: 25px;
-
         }
-
-
         .about-card {
-
             padding: 28px;
-
-            border:
-                1px solid var(--border);
-
+            border: 1px solid var(--border);
             border-radius: 14px;
-
-            background:
-                rgba(
-                    255,
-                    255,
-                    255,
-                    0.018
-                );
-
+            background: rgba(255, 255, 255, 0.018);
         }
-
-
         .about-card h3 {
-
-            margin-bottom:
-                12px;
-
+            margin-bottom: 12px;
             font-size: 18px;
-
         }
-
-
         .about-card p {
-
-            color:
-                var(--muted);
-
+            color: var(--muted);
             font-size: 14px;
-
             line-height: 1.9;
-
         }
-
-
-        /* =====================================================
+        /* ============================================================
            SKILLS
-        ====================================================== */
-
+        ============================================================ */
         .skills-grid {
-
             display: grid;
-
-            grid-template-columns:
-                repeat(3, 1fr);
-
+            grid-template-columns: repeat(3, 1fr);
             gap: 18px;
-
         }
-
-
         .skill-card {
-
             min-height: 175px;
-
             padding: 23px;
-
-            border:
-                1px solid var(--border);
-
+            border: 1px solid var(--border);
             border-radius: 14px;
-
-            background:
-                var(--card);
-
-            transition:
-                border-color 0.2s ease;
-
+            background: var(--card);
+            transition: border-color 0.2s ease;
         }
-
-
         .skill-card:hover {
-
-            border-color:
-                rgba(
-                    59,
-                    141,
-                    248,
-                    0.4
-                );
-
+            border-color: rgba(59, 141, 248, 0.4);
         }
-
-
         .skill-icon {
-
             width: 42px;
-
             height: 42px;
-
             display: flex;
-
             align-items: center;
-
             justify-content: center;
-
-            margin-bottom:
-                17px;
-
+            margin-bottom: 17px;
             border-radius: 9px;
-
-            background:
-                rgba(
-                    59,
-                    141,
-                    248,
-                    0.09
-                );
-
-            color:
-                var(--blue-light);
-
+            background: rgba(59, 141, 248, 0.09);
+            color: var(--blue-light);
             font-size: 20px;
-
         }
-
-
         .skill-card h3 {
-
-            margin-bottom:
-                10px;
-
+            margin-bottom: 10px;
             font-size: 16px;
-
         }
-
-
         .skill-list {
-
             display: flex;
-
             flex-wrap: wrap;
-
             gap: 7px;
-
         }
-
-
         .skill-tag {
-
-            padding:
-                5px 9px;
-
-            border:
-                1px solid rgba(
-                    148,
-                    163,
-                    184,
-                    0.12
-                );
-
+            padding: 5px 9px;
+            border: 1px solid rgba(148, 163, 184, 0.12);
             border-radius: 5px;
-
-            color:
-                #9eb0c5;
-
-            background:
-                rgba(
-                    255,
-                    255,
-                    255,
-                    0.025
-                );
-
+            color: #9eb0c5;
+            background: rgba(255, 255, 255, 0.025);
             font-size: 11px;
-
             font-weight: 500;
-
         }
-
-
-        /* =====================================================
+        /* ============================================================
            EXPERIENCE
-        ====================================================== */
-
+        ============================================================ */
         .experience-list {
-
             display: flex;
-
-            flex-direction:
-                column;
-
+            flex-direction: column;
             gap: 18px;
-
         }
-
-
         .experience-card {
-
             padding: 27px;
-
-            border:
-                1px solid var(--border);
-
+            border: 1px solid var(--border);
             border-radius: 14px;
-
-            background:
-                var(--card);
-
+            background: var(--card);
         }
-
-
         .experience-top {
-
             display: flex;
-
-            justify-content:
-                space-between;
-
+            justify-content: space-between;
             gap: 20px;
-
         }
-
-
         .experience-card h3 {
-
             font-size: 18px;
-
         }
-
-
         .company {
-
             margin-top: 5px;
-
-            color:
-                var(--blue-light);
-
+            color: var(--blue-light);
             font-size: 14px;
-
             font-weight: 600;
-
         }
-
-
         .experience-date {
-
-            color:
-                #7f93ac;
-
+            color: #7f93ac;
             font-size: 12px;
-
-            white-space:
-                nowrap;
-
-            text-align:
-                right;
-
+            white-space: nowrap;
+            text-align: right;
             line-height: 1.7;
-
         }
-
-
         .experience-date strong {
-
-            color:
-                var(--blue-light);
-
+            color: var(--blue-light);
         }
-
-
         .experience-card p {
-
             margin-top: 17px;
-
-            color:
-                var(--muted);
-
+            color: var(--muted);
             font-size: 14px;
-
             line-height: 1.85;
-
         }
-
-
         .experience-tech {
-
             display: flex;
-
             flex-wrap: wrap;
-
             gap: 7px;
-
             margin-top: 18px;
-
         }
-
-
         .experience-tech span {
-
-            padding:
-                5px 9px;
-
-            border:
-                1px solid rgba(
-                    148,
-                    163,
-                    184,
-                    0.12
-                );
-
+            padding: 5px 9px;
+            border: 1px solid rgba(148, 163, 184, 0.12);
             border-radius: 5px;
-
-            color:
-                #a9b8ca;
-
+            color: #a9b8ca;
             font-size: 11px;
-
         }
-
-
-        /* =====================================================
+        /* ============================================================
            PROJECTS
-        ====================================================== */
-
+        ============================================================ */
         .projects-grid {
-
             display: grid;
-
-            grid-template-columns:
-                repeat(2, 1fr);
-
+            grid-template-columns: repeat(2, 1fr);
             gap: 20px;
-
         }
-
-
         .project-card {
-
             position: relative;
-
             padding: 27px;
-
-            border:
-                1px solid var(--border);
-
+            border: 1px solid var(--border);
             border-radius: 15px;
-
-            background:
-                var(--card);
-
+            background: var(--card);
             overflow: hidden;
-
         }
-
-
         .project-card.featured {
-
-            grid-column:
-                span 2;
-
-            border-color:
-                rgba(
-                    59,
-                    141,
-                    248,
-                    0.32
-                );
-
-            background:
-                linear-gradient(
-                    135deg,
-                    rgba(
-                        59,
-                        141,
-                        248,
-                        0.08
-                    ),
-                    rgba(
-                        13,
-                        32,
-                        55,
-                        1
-                    ) 48%
-                );
-
+            grid-column: span 2;
+            border-color: rgba(59, 141, 248, 0.32);
+            background: linear-gradient(135deg, rgba(59, 141, 248, 0.08), rgba(13, 32, 55, 1) 48%);
         }
-
-
         .project-badge {
-
             display: inline-flex;
-
-            margin-bottom:
-                15px;
-
-            padding:
-                5px 9px;
-
-            border:
-                1px solid rgba(
-                    59,
-                    141,
-                    248,
-                    0.25
-                );
-
+            margin-bottom: 15px;
+            padding: 5px 9px;
+            border: 1px solid rgba(59, 141, 248, 0.25);
             border-radius: 5px;
-
-            color:
-                var(--blue-light);
-
-            background:
-                rgba(
-                    59,
-                    141,
-                    248,
-                    0.07
-                );
-
+            color: var(--blue-light);
+            background: rgba(59, 141, 248, 0.07);
             font-size: 10px;
-
             font-weight: 700;
-
-            text-transform:
-                uppercase;
-
-            letter-spacing:
-                0.8px;
-
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
         }
-
-
         .project-card h3 {
-
             font-size: 20px;
-
         }
-
-
         .project-card.featured h3 {
-
             font-size: 24px;
-
         }
-
-
         .project-card p {
-
             max-width: 900px;
-
-            margin-top:
-                11px;
-
-            color:
-                var(--muted);
-
+            margin-top: 11px;
+            color: var(--muted);
             font-size: 14px;
-
             line-height: 1.85;
-
         }
-
-
         .project-tech {
-
             display: flex;
-
             flex-wrap: wrap;
-
             gap: 7px;
-
-            margin-top:
-                20px;
-
+            margin-top: 20px;
         }
-
-
         .project-tech span {
-
-            padding:
-                6px 10px;
-
-            border:
-                1px solid rgba(
-                    148,
-                    163,
-                    184,
-                    0.13
-                );
-
+            padding: 6px 10px;
+            border: 1px solid rgba(148, 163, 184, 0.13);
             border-radius: 5px;
-
-            color:
-                #b4c2d2;
-
-            background:
-                rgba(
-                    255,
-                    255,
-                    255,
-                    0.025
-                );
-
+            color: #b4c2d2;
+            background: rgba(255, 255, 255, 0.025);
             font-size: 11px;
-
         }
-
-
-        /* =====================================================
+        /* ============================================================
            EDUCATION
-        ====================================================== */
-
+        ============================================================ */
         .education-grid {
-
             display: grid;
-
-            grid-template-columns:
-                repeat(2, 1fr);
-
+            grid-template-columns: repeat(2, 1fr);
             gap: 18px;
-
         }
-
-
         .education-card {
-
             display: flex;
-
-            align-items:
-                flex-start;
-
+            align-items: flex-start;
             gap: 20px;
-
-            padding:
-                26px;
-
-            border:
-                1px solid var(--border);
-
-            border-radius:
-                14px;
-
-            background:
-                var(--card);
-
+            padding: 26px;
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            background: var(--card);
         }
-
-
         .education-icon {
-
             width: 52px;
-
             height: 52px;
-
             flex-shrink: 0;
-
             display: flex;
-
             align-items: center;
-
             justify-content: center;
-
-            border-radius:
-                11px;
-
-            background:
-                rgba(
-                    59,
-                    141,
-                    248,
-                    0.08
-                );
-
-            color:
-                var(--blue-light);
-
+            border-radius: 11px;
+            background: rgba(59, 141, 248, 0.08);
+            color: var(--blue-light);
             font-size: 23px;
-
         }
-
-
         .education-card h3 {
-
             font-size: 17px;
-
         }
-
-
         .education-card p {
-
             margin-top: 4px;
-
-            color:
-                var(--muted);
-
+            color: var(--muted);
             font-size: 13px;
-
         }
-
-
         .education-card small {
-
             display: block;
-
             margin-top: 8px;
-
-            color:
-                #7287a1;
-
+            color: #7287a1;
             font-size: 11px;
-
         }
-
-
-        /* =====================================================
+        /* ============================================================
            CONTACT
-        ====================================================== */
-
+        ============================================================ */
         .contact {
-
-            padding-bottom:
-                90px;
-
+            padding-bottom: 90px;
         }
-
-
         .contact-box {
-
             display: flex;
-
-            align-items:
-                center;
-
-            justify-content:
-                space-between;
-
-            gap: 30px;
-
-            padding:
-                35px;
-
-            border:
-                1px solid rgba(
-                    59,
-                    141,
-                    248,
-                    0.2
-                );
-
-            border-radius:
-                17px;
-
-            background:
-                linear-gradient(
-                    120deg,
-                    rgba(
-                        59,
-                        141,
-                        248,
-                        0.08
-                    ),
-                    rgba(
-                        13,
-                        32,
-                        55,
-                        0.5
-                    )
-                );
-
-        }
-
-
-        .contact-box h2 {
-
-            font-size: 29px;
-
-        }
-
-
-        .contact-box p {
-
-            margin-top: 8px;
-
-            color:
-                var(--muted);
-
-            font-size: 14px;
-
-        }
-
-
-        .contact-links {
-
-            display: flex;
-
-            flex-wrap: wrap;
-
-            gap: 10px;
-
-        }
-
-
-        .contact-link {
-
-            display: inline-flex;
-
             align-items: center;
-
-            gap: 8px;
-
-            padding:
-                11px 14px;
-
-            border:
-                1px solid var(--border);
-
-            border-radius: 8px;
-
-            color:
-                #dbe5f0;
-
-            background:
-                rgba(
-                    255,
-                    255,
-                    255,
-                    0.025
-                );
-
-            font-size: 13px;
-
-            font-weight: 600;
-
+            justify-content: space-between;
+            gap: 30px;
+            padding: 35px;
+            border: 1px solid rgba(59, 141, 248, 0.2);
+            border-radius: 17px;
+            background: linear-gradient(120deg, rgba(59, 141, 248, 0.08), rgba(13, 32, 55, 0.5));
         }
-
-
-        .contact-link:hover {
-
-            border-color:
-                rgba(
-                    59,
-                    141,
-                    248,
-                    0.4
-                );
-
-            background:
-                rgba(
-                    59,
-                    141,
-                    248,
-                    0.07
-                );
-
+        .contact-box h2 {
+            font-size: 29px;
         }
-
-
-        /* =====================================================
-           FOOTER
-        ====================================================== */
-
-        footer {
-
-            border-top:
-                1px solid rgba(
-                    148,
-                    163,
-                    184,
-                    0.08
-                );
-
-            padding:
-                25px 0;
-
-            color:
-                #71859f;
-
-            font-size: 12px;
-
+        .contact-box p {
+            margin-top: 8px;
+            color: var(--muted);
+            font-size: 14px;
         }
-
-
-        .footer-inner {
-
+        .contact-links {
             display: flex;
-
-            align-items:
-                center;
-
-            justify-content:
-                space-between;
-
+            flex-wrap: wrap;
+            gap: 10px;
         }
-
-
-        /* =====================================================
+        .contact-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 11px 14px;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            color: #dbe5f0;
+            background: rgba(255, 255, 255, 0.025);
+            font-size: 13px;
+            font-weight: 600;
+        }
+        .contact-link:hover {
+            border-color: rgba(59, 141, 248, 0.4);
+            background: rgba(59, 141, 248, 0.07);
+        }
+        /* ============================================================
+           FOOTER
+        ============================================================ */
+        footer {
+            border-top: 1px solid rgba(148, 163, 184, 0.08);
+            padding: 25px 0;
+            color: #71859f;
+            font-size: 12px;
+        }
+        .footer-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        /* ============================================================
            RESPONSIVE
-        ====================================================== */
-
+        ============================================================ */
         @media (max-width: 1000px) {
-
             .nav-links {
-
                 gap: 18px;
-
             }
-
-
             .hero-grid {
-
-                grid-template-columns:
-                    1fr;
-
+                grid-template-columns: 1fr;
                 gap: 45px;
-
             }
-
-
             .profile-wrapper {
-
-                justify-content:
-                    flex-start;
-
+                justify-content: flex-start;
             }
-
-
             .profile-card {
-
                 width: 380px;
-
             }
-
-
             .skills-grid {
-
-                grid-template-columns:
-                    repeat(2, 1fr);
-
+                grid-template-columns: repeat(2, 1fr);
             }
-
         }
-
-
         @media (max-width: 760px) {
-
             .container {
-
-                width:
-                    min(
-                        100% - 30px,
-                        var(--max-width)
-                    );
-
+                width: min(100% - 30px, var(--max-width));
             }
-
-
             .navbar {
-
                 height: 70px;
-
             }
-
-
             .nav-links {
-
                 display: none;
-
             }
-
-
             .hero {
-
-                min-height:
-                    auto;
-
-                padding:
-                    55px 0 50px;
-
+                min-height: auto;
+                padding: 55px 0 50px;
             }
-
-
             .hero h1 {
-
                 font-size: 50px;
-
-                letter-spacing:
-                    -2.7px;
-
+                letter-spacing: -2.7px;
             }
-
-
             .hero-subtitle {
-
                 font-size: 21px;
-
             }
-
-
             .hero-description {
-
                 font-size: 14px;
-
-                line-height:
-                    1.85;
-
+                line-height: 1.85;
             }
-
-
             .profile-card {
-
                 width: 100%;
-
                 max-width: 390px;
-
             }
-
-
             .profile-photo {
-
                 height: 420px;
-
             }
-
-
             section {
-
-                padding:
-                    65px 0;
-
+                padding: 65px 0;
             }
-
-
             .about-grid,
             .skills-grid,
             .projects-grid,
             .education-grid {
-
-                grid-template-columns:
-                    1fr;
-
+                grid-template-columns: 1fr;
             }
-
-
             .project-card.featured {
-
-                grid-column:
-                    span 1;
-
+                grid-column: span 1;
             }
-
-
             .experience-top {
-
-                flex-direction:
-                    column;
-
+                flex-direction: column;
                 gap: 5px;
-
             }
-
-
             .experience-date {
-
-                text-align:
-                    left;
-
+                text-align: left;
             }
-
-
             .contact-box {
-
-                flex-direction:
-                    column;
-
-                align-items:
-                    flex-start;
-
+                flex-direction: column;
+                align-items: flex-start;
             }
-
-
             .footer-inner {
-
-                flex-direction:
-                    column;
-
+                flex-direction: column;
                 gap: 8px;
-
-                text-align:
-                    center;
-
+                text-align: center;
             }
-
         }
-
-
         @media (max-width: 480px) {
-
             .brand-text {
-
                 display: none;
-
             }
-
-
             .resume-btn {
-
-                padding:
-                    10px 12px;
-
+                padding: 10px 12px;
             }
-
-
             .hero h1 {
-
                 font-size: 44px;
-
             }
-
-
             .hero-buttons {
-
-                flex-direction:
-                    column;
-
+                flex-direction: column;
             }
-
-
             .primary-btn,
             .secondary-btn {
-
                 width: 100%;
-
             }
-
-
             .hero-highlights {
-
-                align-items:
-                    flex-start;
-
-                flex-direction:
-                    column;
-
+                align-items: flex-start;
+                flex-direction: column;
             }
-
-
             .profile-photo {
-
                 height: 380px;
-
             }
-
         }
-
     </style>
-
 </head>
-
-
 <body>
-
-
-<!-- =========================================================
-     HEADER
-========================================================== -->
-
-<header>
-
-    <div class="container navbar">
-
-
-        <a href="#home"
-           class="brand">
-
-            <div class="brand-icon">
-
-                <i class="bi bi-code-slash"></i>
-
-            </div>
-
-
-            <div class="brand-text">
-
-                <h3>
-                    Saurabh Ghodekar
-                </h3>
-
-                <span>
-                    .NET Full Stack Developer
-                </span>
-
-            </div>
-
-        </a>
-
-
-        <nav class="nav-links">
-
-            <a href="#home"
-               class="active">
-                Home
-            </a>
-
-            <a href="#about">
-                About
-            </a>
-
-            <a href="#skills">
-                Skills
-            </a>
-
-            <a href="#experience">
-                Experience
-            </a>
-
-            <a href="#projects">
-                Projects
-            </a>
-
-            <a href="#education">
-                Education
-            </a>
-
-            <a href="#contact">
-                Contact
-            </a>
-
-        </nav>
-
-
-        <a href="SaurabhGhodekar.pdf"
-           target="_blank"
-           class="resume-btn">
-
-            <i class="bi bi-download"></i>
-
-            Resume
-
-        </a>
-
-    </div>
-
-</header>
-
-
-<main>
-
-
-<!-- =========================================================
-     HERO
-========================================================== -->
-
-<section id="home"
-         class="hero">
-
-    <div class="container hero-grid">
-
-
-        <div class="hero-content">
-
-
-            <div class="hero-highlights">
-
-
-                <div class="availability">
-
-                    <span class="availability-dot"></span>
-
-                    Available for Full-time Opportunities
-
+    <!-- ============================================================
+    HEADER
+    ============================================================ -->
+    <header>
+        <div class="container navbar">
+            <a href="#home" class="brand">
+                <div class="brand-icon">
+                    <i class="bi bi-code-slash"></i>
                 </div>
-
-
-                <div class="experience-badge">
-
-                    <i class="bi bi-briefcase-fill"></i>
-
-                    <strong>
-                        4+ Years
-                    </strong>
-
-                    <span>
-                        Professional Experience
-                    </span>
-
+                <div class="brand-text">
+                    <h3>Saurabh Ghodekar</h3>
+                    <span>.NET Full Stack Developer</span>
                 </div>
-
-
-            </div>
-
-
-            <h1>
-
-                Building reliable
-
-                <span class="blue">
-                    software solutions
-                </span>
-
-                with .NET.
-
-            </h1>
-
-
-            <div class="hero-subtitle">
-
-                .NET Core Full Stack Developer
-
-                <span class="separator">
-                    •
-                </span>
-
-                <span class="experience-text">
-                    4+ Years Experience
-                </span>
-
-            </div>
-
-
-            <p class="hero-description">
-
-                I design and develop scalable web applications,
-                REST APIs, Windows applications and enterprise
-                software using C#, .NET, SQL Server and modern
-                frontend technologies. I enjoy solving complex
-                engineering problems and turning business
-                requirements into maintainable software.
-
-            </p>
-
-
-            <div class="hero-buttons">
-
-
-                <a href="#projects"
-                   class="primary-btn">
-
-                    <i class="bi bi-arrow-right"></i>
-
-                    View My Projects
-
-                </a>
-
-
-                <a href="#contact"
-                   class="secondary-btn">
-
-                    <i class="bi bi-envelope"></i>
-
-                    Get In Touch
-
-                </a>
-
-
-                <a href="SaurabhGhodekar.pdf"
-                   target="_blank"
-                   class="secondary-btn">
-
-                    <i class="bi bi-file-earmark-pdf"></i>
-
-                    Download Resume
-
-                </a>
-
-
-            </div>
-
+            </a>
+            <nav class="nav-links">
+                <a href="#home" class="active">Home</a>
+                <a href="#about">About</a>
+                <a href="#skills">Skills</a>
+                <a href="#experience">Experience</a>
+                <a href="#projects">Projects</a>
+                <a href="#education">Education</a>
+                <a href="#contact">Contact</a>
+            </nav>
+            <a href="SaurabhGhodekar.pdf" target="_blank" class="resume-btn">
+                <i class="bi bi-download"></i> Resume
+            </a>
         </div>
-
-
-        <!-- =================================================
-             PROFILE PHOTO
-        ================================================== -->
-
-        <div class="profile-wrapper">
-
-
-            <div class="profile-card">
-
-
-                <img src="SaurabhGhodekar.jpg"
-                     alt="Saurabh Ghodekar"
-                     class="profile-photo">
-
-
-                <div class="profile-info">
-
-
-                    <div>
-
-                        <div class="profile-name">
-
-                            Saurabh Ghodekar
-
+    </header>
+    <main>
+        <!-- ============================================================
+        HERO
+        ============================================================ -->
+        <section id="home" class="hero">
+            <div class="container hero-grid">
+                <div class="hero-content">
+                    <div class="hero-highlights">
+                        <div class="availability">
+                            <span class="availability-dot"></span>
+                            Available for Full-time Opportunities
                         </div>
-
-
-                        <div class="profile-role">
-
-                            .NET Full Stack Developer
-
+                        <div class="experience-badge">
+                            <i class="bi bi-briefcase-fill"></i>
+                            <strong>4+ Years</strong>
+                            <span>Professional Experience</span>
                         </div>
-
                     </div>
-
-
-                    <div class="profile-location">
-
-                        <i class="bi bi-geo-alt-fill"></i>
-
-                        Pune, India
-
+                    <h1>Building reliable <span class="blue">software solutions</span> with .NET.</h1>
+                    <div class="hero-subtitle">
+                        .NET Core Full Stack Developer
+                        <span class="separator">•</span>
+                        <span class="experience-text">4+ Years Experience</span>
                     </div>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =========================================================
-     ABOUT
-========================================================== -->
-
-<section id="about"
-         class="about">
-
-    <div class="container">
-
-
-        <div class="section-header">
-
-            <div class="section-label">
-                About Me
-            </div>
-
-
-            <h2 class="section-title">
-
-                Engineering software that solves
-                real problems.
-
-            </h2>
-
-
-            <p class="section-description">
-
-                .NET Full Stack Developer with
-                4+ years of professional experience
-                since June 2022, working across
-                enterprise web applications, REST APIs,
-                Windows applications, reporting solutions,
-                databases and modern frontend technologies.
-
-            </p>
-
-        </div>
-
-
-        <div class="about-grid">
-
-
-            <div class="about-card">
-
-                <h3>
-                    .NET Full Stack Development
-                </h3>
-
-
-                <p>
-
-                    With 4+ years of professional experience,
-                    I work with C#, .NET, ASP.NET Core,
-                    MVC, Web API, Entity Framework,
-                    SQL Server and frontend technologies
-                    including JavaScript, jQuery, Bootstrap
-                    and Angular.
-
-                </p>
-
-            </div>
-
-
-            <div class="about-card">
-
-                <h3>
-                    Enterprise Application Development
-                </h3>
-
-
-                <p>
-
-                    Experience working on enterprise systems,
-                    tolling applications, dashboards,
-                    Windows applications, RDLC reporting
-                    solutions, migration projects and
-                    database-driven business applications.
-
-                </p>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =========================================================
-     SKILLS
-========================================================== -->
-
-<section id="skills">
-
-    <div class="container">
-
-
-        <div class="section-header">
-
-            <div class="section-label">
-                Technical Skills
-            </div>
-
-
-            <h2 class="section-title">
-
-                Technologies I work with.
-
-            </h2>
-
-
-            <p class="section-description">
-
-                A combination of backend, frontend,
-                desktop, database, reporting, cloud
-                and development technologies.
-
-            </p>
-
-        </div>
-
-
-        <div class="skills-grid">
-
-
-            <!-- BACKEND -->
-
-            <div class="skill-card">
-
-                <div class="skill-icon">
-                    <i class="bi bi-server"></i>
-                </div>
-
-
-                <h3>
-                    Backend Development
-                </h3>
-
-
-                <div class="skill-list">
-
-                    <span class="skill-tag">
-                        C#
-                    </span>
-
-                    <span class="skill-tag">
-                        .NET
-                    </span>
-
-                    <span class="skill-tag">
-                        .NET Core
-                    </span>
-
-                    <span class="skill-tag">
-                        ASP.NET Core
-                    </span>
-
-                    <span class="skill-tag">
-                        MVC
-                    </span>
-
-                    <span class="skill-tag">
-                        Web API
-                    </span>
-
-                    <span class="skill-tag">
-                        Entity Framework
-                    </span>
-
-                    <span class="skill-tag">
-                        Entity Framework Core
-                    </span>
-
-                </div>
-
-            </div>
-
-
-            <!-- FRONTEND -->
-
-            <div class="skill-card">
-
-                <div class="skill-icon">
-                    <i class="bi bi-window"></i>
-                </div>
-
-
-                <h3>
-                    Frontend Development
-                </h3>
-
-
-                <div class="skill-list">
-
-                    <span class="skill-tag">
-                        HTML5
-                    </span>
-
-                    <span class="skill-tag">
-                        CSS3
-                    </span>
-
-                    <span class="skill-tag">
-                        JavaScript
-                    </span>
-
-                    <span class="skill-tag">
-                        jQuery
-                    </span>
-
-                    <span class="skill-tag">
-                        Bootstrap
-                    </span>
-
-                    <span class="skill-tag">
-                        Angular
-                    </span>
-
-                </div>
-
-            </div>
-
-
-            <!-- DESKTOP -->
-
-            <div class="skill-card">
-
-                <div class="skill-icon">
-                    <i class="bi bi-pc-display"></i>
-                </div>
-
-
-                <h3>
-                    Desktop Development
-                </h3>
-
-
-                <div class="skill-list">
-
-                    <span class="skill-tag">
-                        WinForms
-                    </span>
-
-                    <span class="skill-tag">
-                        WPF
-                    </span>
-
-                    <span class="skill-tag">
-                        Windows Applications
-                    </span>
-
-                    <span class="skill-tag">
-                        C#
-                    </span>
-
-                    <span class="skill-tag">
-                        .NET
-                    </span>
-
-                </div>
-
-            </div>
-
-
-            <!-- DATABASE -->
-
-            <div class="skill-card">
-
-                <div class="skill-icon">
-                    <i class="bi bi-database"></i>
-                </div>
-
-
-                <h3>
-                    Database
-                </h3>
-
-
-                <div class="skill-list">
-
-                    <span class="skill-tag">
-                        SQL Server
-                    </span>
-
-                    <span class="skill-tag">
-                        PostgreSQL
-                    </span>
-
-                    <span class="skill-tag">
-                        T-SQL
-                    </span>
-
-                    <span class="skill-tag">
-                        Stored Procedures
-                    </span>
-
-                    <span class="skill-tag">
-                        Query Optimization
-                    </span>
-
-                </div>
-
-            </div>
-
-
-            <!-- REPORTING -->
-
-            <div class="skill-card">
-
-                <div class="skill-icon">
-                    <i class="bi bi-file-earmark-bar-graph"></i>
-                </div>
-
-
-                <h3>
-                    Reporting & BI
-                </h3>
-
-
-                <div class="skill-list">
-
-                    <span class="skill-tag">
-                        RDLC Reports
-                    </span>
-
-                    <span class="skill-tag">
-                        Report Viewer
-                    </span>
-
-                    <span class="skill-tag">
-                        Reporting Services
-                    </span>
-
-                    <span class="skill-tag">
-                        Data Reports
-                    </span>
-
-                </div>
-
-            </div>
-
-
-            <!-- TOOLS -->
-
-            <div class="skill-card">
-
-                <div class="skill-icon">
-                    <i class="bi bi-tools"></i>
-                </div>
-
-
-                <h3>
-                    Tools & Collaboration
-                </h3>
-
-
-                <div class="skill-list">
-
-                    <span class="skill-tag">
-                        Visual Studio
-                    </span>
-
-                    <span class="skill-tag">
-                        Git
-                    </span>
-
-                    <span class="skill-tag">
-                        SVN
-                    </span>
-
-                    <span class="skill-tag">
-                        Postman
-                    </span>
-
-                    <span class="skill-tag">
-                        Jira
-                    </span>
-
-                </div>
-
-            </div>
-
-
-            <!-- AZURE -->
-
-            <div class="skill-card">
-
-                <div class="skill-icon">
-                    <i class="bi bi-cloud"></i>
-                </div>
-
-
-                <h3>
-                    Cloud & Azure
-                </h3>
-
-
-                <div class="skill-list">
-
-                    <span class="skill-tag">
-                        Microsoft Azure
-                    </span>
-
-                    <span class="skill-tag">
-                        Azure DevOps
-                    </span>
-
-                    <span class="skill-tag">
-                        CI/CD
-                    </span>
-
-                    <span class="skill-tag">
-                        Cloud Deployment
-                    </span>
-
-                </div>
-
-            </div>
-
-
-            <!-- ARCHITECTURE -->
-
-            <div class="skill-card">
-
-                <div class="skill-icon">
-                    <i class="bi bi-diagram-3"></i>
-                </div>
-
-
-                <h3>
-                    Architecture & Practices
-                </h3>
-
-
-                <div class="skill-list">
-
-                    <span class="skill-tag">
-                        REST APIs
-                    </span>
-
-                    <span class="skill-tag">
-                        OOP
-                    </span>
-
-                    <span class="skill-tag">
-                        SOLID
-                    </span>
-
-                    <span class="skill-tag">
-                        Layered Architecture
-                    </span>
-
-                    <span class="skill-tag">
-                        Agile
-                    </span>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =========================================================
-     EXPERIENCE
-========================================================== -->
-
-<section id="experience">
-
-    <div class="container">
-
-
-        <div class="section-header">
-
-            <div class="section-label">
-                Experience
-            </div>
-
-
-            <h2 class="section-title">
-
-                4+ years of building enterprise software.
-
-            </h2>
-
-
-            <p class="section-description">
-
-                Professional software development experience
-                since June 2022, specializing in .NET full stack
-                development, enterprise applications, tolling
-                systems, APIs, dashboards, desktop applications
-                and reporting solutions.
-
-            </p>
-
-        </div>
-
-
-        <div class="experience-list">
-
-
-            <div class="experience-card">
-
-
-                <div class="experience-top">
-
-
-                    <div>
-
-                        <h3>
-                            .NET Core Full Stack Developer
-                        </h3>
-
-
-                        <div class="company">
-
-                            Arya Omnitalk Wireless
-                            Solutions Private Limited
-
-                        </div>
-
-                    </div>
-
-
-                    <div class="experience-date">
-
-                        Jun 2022 – Present
-
-                        <br>
-
-                        <strong>
-                            4+ Years
-                        </strong>
-
-                    </div>
-
-
-                </div>
-
-
-                <p>
-
-                    Working on enterprise software solutions
-                    using C#, .NET Core, ASP.NET Core, Web API,
-                    SQL Server and modern frontend technologies.
-                    Involved in development of tolling systems,
-                    dashboards, Windows applications, reporting
-                    solutions and business-critical applications.
-
-                    <br><br>
-
-                    Working across application development,
-                    database integration, REST APIs, frontend
-                    development, reporting and enterprise
-                    application workflows.
-
-                </p>
-
-
-                <div class="experience-tech">
-
-                    <span>C#</span>
-
-                    <span>.NET</span>
-
-                    <span>.NET Core</span>
-
-                    <span>ASP.NET Core</span>
-
-                    <span>Web API</span>
-
-                    <span>SQL Server</span>
-
-                    <span>Entity Framework</span>
-
-                    <span>Angular</span>
-
-                    <span>JavaScript</span>
-
-                    <span>jQuery</span>
-
-                    <span>Bootstrap</span>
-
-                    <span>WinForms</span>
-
-                    <span>WPF</span>
-
-                    <span>RDLC</span>
-
-                    <span>Postman</span>
-
-                    <span>Azure</span>
-
-                    <span>Jira</span>
-
-                </div>
-
-            </div>
-
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =========================================================
-     PROJECTS
-========================================================== -->
-
-<section id="projects">
-
-    <div class="container">
-
-
-        <div class="section-header">
-
-            <div class="section-label">
-                Featured Projects
-            </div>
-
-
-            <h2 class="section-title">
-                Selected work.
-            </h2>
-
-
-            <p class="section-description">
-
-                Enterprise systems, dashboards, migration
-                projects, tolling solutions and reporting
-                applications developed using the .NET ecosystem.
-
-            </p>
-
-        </div>
-
-
-        <div class="projects-grid">
-
-
-            <!-- =================================================
-                 MLFF TOLLING SYSTEM
-            ================================================== -->
-
-            <div class="project-card featured">
-
-
-                <div class="project-badge">
-                    Major Project
-                </div>
-
-
-                <h3>
-                    MLFF Tolling System
-                </h3>
-
-
-                <p>
-
-                    A major enterprise Multi-Lane Free Flow
-                    (MLFF) Tolling System designed for modern
-                    tolling operations.
-
-                    <br><br>
-
-                    The system involves transaction processing,
-                    plaza and lane operations, vehicle
-                    identification, ANPR-related workflows,
-                    reconciliation, reporting and operational
-                    monitoring.
-
-                    <br><br>
-
-                    Worked across the application stack,
-                    including backend development, REST APIs,
-                    database operations and frontend modules.
-                    The project involves development and
-                    integration of business-critical tolling
-                    workflows.
-
-                </p>
-
-
-                <div class="project-tech">
-
-                    <span>C#</span>
-
-                    <span>.NET Core</span>
-
-                    <span>ASP.NET Core</span>
-
-                    <span>Web API</span>
-
-                    <span>SQL Server</span>
-
-                    <span>Entity Framework</span>
-
-                    <span>HTML5</span>
-
-                    <span>CSS3</span>
-
-                    <span>JavaScript</span>
-
-                    <span>jQuery</span>
-
-                    <span>Bootstrap</span>
-
-                    <span>Angular</span>
-
-                    <span>Postman</span>
-
-                    <span>REST API</span>
-
-                    <span>Git</span>
-
-                    <span>SVN</span>
-
-                </div>
-
-            </div>
-
-
-            <!-- =================================================
-                 MAPPLE DASHBOARD
-            ================================================== -->
-
-            <div class="project-card">
-
-
-                <div class="project-badge">
-                    Dashboard UI
-                </div>
-
-
-                <h3>
-                    Mapple Dashboard UI
-                </h3>
-
-
-                <p>
-
-                    Designed and developed a modern enterprise
-                    dashboard interface with structured cards,
-                    summary sections, plaza-wise information,
-                    lane-level data and operational statistics.
-
-                    <br><br>
-
-                    Focused on presenting complex business data
-                    in a clean, responsive and user-friendly
-                    interface.
-
-                </p>
-
-
-                <div class="project-tech">
-
-                    <span>HTML5</span>
-
-                    <span>CSS3</span>
-
-                    <span>JavaScript</span>
-
-                    <span>jQuery</span>
-
-                    <span>Bootstrap</span>
-
-                    <span>Angular</span>
-
-                    <span>Responsive UI</span>
-
-                    <span>Dashboard Design</span>
-
-                </div>
-
-            </div>
-
-
-            <!-- =================================================
-                 AVC MIGRATION
-            ================================================== -->
-
-            <div class="project-card">
-
-
-                <div class="project-badge">
-                    Migration
-                </div>
-
-
-                <h3>
-                    AVC Migration Project
-                </h3>
-
-
-                <p>
-
-                    Worked on an AVC migration project involving
-                    application and system-level migration
-                    activities, database integration and
-                    implementation of required business
-                    workflows within the .NET ecosystem.
-
-                </p>
-
-
-                <div class="project-tech">
-
-                    <span>C#</span>
-
-                    <span>.NET</span>
-
-                    <span>SQL Server</span>
-
-                    <span>Web API</span>
-
-                    <span>Database Migration</span>
-
-                    <span>Integration</span>
-
-                </div>
-
-            </div>
-
-
-            <!-- =================================================
-                 HTMS RDLC
-            ================================================== -->
-
-            <div class="project-card">
-
-
-                <div class="project-badge">
-                    Reporting
-                </div>
-
-
-                <h3>
-                    RDLC Reports for HTMS Projects
-                </h3>
-
-
-                <p>
-
-                    Developed and maintained RDLC-based reporting
-                    solutions for HTMS projects.
-
-                    <br><br>
-
-                    Worked on report layouts, datasets,
-                    parameters, expressions, database queries
-                    and report generation for enterprise
-                    operational requirements.
-
-                </p>
-
-
-                <div class="project-tech">
-
-                    <span>RDLC</span>
-
-                    <span>Report Viewer</span>
-
-                    <span>C#</span>
-
-                    <span>.NET</span>
-
-                    <span>SQL Server</span>
-
-                    <span>Stored Procedures</span>
-
-                    <span>Reporting</span>
-
-                </div>
-
-            </div>
-
-
-            <!-- =================================================
-                 WINDOWS APPLICATION
-            ================================================== -->
-
-            <div class="project-card">
-
-
-                <div class="project-badge">
-                    Desktop Application
-                </div>
-
-
-                <h3>
-                    Windows Application Development
-                </h3>
-
-
-                <p>
-
-                    Developed Windows-based enterprise
-                    applications using C#, WinForms and WPF,
-                    including business workflows, database
-                    integration, reporting and application-level
-                    functionality.
-
-                </p>
-
-
-                <div class="project-tech">
-
-                    <span>C#</span>
-
-                    <span>.NET</span>
-
-                    <span>WinForms</span>
-
-                    <span>WPF</span>
-
-                    <span>Windows Applications</span>
-
-                    <span>SQL Server</span>
-
-                    <span>RDLC</span>
-
-                </div>
-
-            </div>
-
-
-            <!-- =================================================
-                 ENTERPRISE WEB APPLICATIONS
-            ================================================== -->
-
-            <div class="project-card">
-
-
-                <div class="project-badge">
-                    Web Application
-                </div>
-
-
-                <h3>
-                    Enterprise Web Applications
-                </h3>
-
-
-                <p>
-
-                    Developed business-focused web applications
-                    with responsive dashboards, data management,
-                    API integrations, database-driven workflows
-                    and enterprise reporting functionality.
-
-                </p>
-
-
-                <div class="project-tech">
-
-                    <span>ASP.NET Core MVC</span>
-
-                    <span>Web API</span>
-
-                    <span>SQL Server</span>
-
-                    <span>JavaScript</span>
-
-                    <span>jQuery</span>
-
-                    <span>Bootstrap</span>
-
-                    <span>Angular</span>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =========================================================
-     EDUCATION
-========================================================== -->
-
-<section id="education">
-
-    <div class="container">
-
-
-        <div class="section-header">
-
-            <div class="section-label">
-                Education
-            </div>
-
-
-            <h2 class="section-title">
-                Academic background.
-            </h2>
-
-        </div>
-
-
-        <div class="education-grid">
-
-
-            <!-- CDAC -->
-
-            <div class="education-card">
-
-
-                <div class="education-icon">
-
-                    <i class="bi bi-mortarboard-fill"></i>
-
-                </div>
-
-
-                <div>
-
-                    <h3>
-                        CDAC – Post Graduate Diploma
-                        in Advanced Computing
-                    </h3>
-
-
-                    <p>
-                        SunBeam Institute of Information
-                        Technology, Pune-Karad
+                    <p class="hero-description">
+                        I design and develop scalable web applications, REST APIs, Windows applications and enterprise
+                        software using C#, .NET, SQL Server and modern frontend technologies. I enjoy solving complex
+                        engineering problems and turning business requirements into maintainable software.
                     </p>
-
-
-                    <small>
-                        PG-DAC
-                    </small>
-
+                    <div class="hero-buttons">
+                        <a href="#projects" class="primary-btn">
+                            <i class="bi bi-arrow-right"></i> View My Projects
+                        </a>
+                        <a href="#contact" class="secondary-btn">
+                            <i class="bi bi-envelope"></i> Get In Touch
+                        </a>
+                        <a href="SaurabhGhodekar.pdf" target="_blank" class="secondary-btn">
+                            <i class="bi bi-file-earmark-pdf"></i> Download Resume
+                        </a>
+                    </div>
                 </div>
-
+                <div class="profile-wrapper">
+                    <div class="profile-card">
+                        <img src="SaurabhGhodekar.jpg" alt="Saurabh Ghodekar" class="profile-photo">
+                        <div class="profile-info">
+                            <div>
+                                <div class="profile-name">Saurabh Ghodekar</div>
+                                <div class="profile-role">.NET Full Stack Developer</div>
+                            </div>
+                            <div class="profile-location">
+                                <i class="bi bi-geo-alt-fill"></i> Pune, India
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-
-
-            <!-- BACHELOR -->
-
-            <div class="education-card">
-
-
-                <div class="education-icon">
-
-                    <i class="bi bi-book"></i>
-
-                </div>
-
-
-                <div>
-
-                    <h3>
-                        Bachelor's Degree
-                    </h3>
-
-
-                    <p>
-                        Computer / Information Technology
+        </section>
+        <!-- ============================================================
+        ABOUT
+        ============================================================ -->
+        <section id="about" class="about">
+            <div class="container">
+                <div class="section-header">
+                    <div class="section-label">About Me</div>
+                    <h2 class="section-title">Engineering software that solves real problems.</h2>
+                    <p class="section-description">
+                        .NET Full Stack Developer with 4+ years of professional experience since June 2022, working across
+                        enterprise web applications, REST APIs, Windows applications, reporting solutions, databases and
+                        modern frontend technologies.
                     </p>
-
-
-                    <small>
-                        Academic Background
-                    </small>
-
                 </div>
-
+                <div class="about-grid">
+                    <div class="about-card">
+                        <h3>.NET Full Stack Development</h3>
+                        <p>
+                            With 4+ years of professional experience, I work with C#, .NET, ASP.NET Core, MVC, Web API,
+                            Entity Framework, SQL Server and frontend technologies including JavaScript, jQuery, Bootstrap
+                            and Angular.
+                        </p>
+                    </div>
+                    <div class="about-card">
+                        <h3>Enterprise Application Development</h3>
+                        <p>
+                            Experience working on enterprise systems, tolling applications, dashboards, Windows applications,
+                            RDLC reporting solutions, migration projects and database-driven business applications.
+                        </p>
+                    </div>
+                </div>
             </div>
-
+        </section>
+        <!-- ============================================================
+        SKILLS
+        ============================================================ -->
+        <section id="skills">
+            <div class="container">
+                <div class="section-header">
+                    <div class="section-label">Technical Skills</div>
+                    <h2 class="section-title">Technologies I work with.</h2>
+                    <p class="section-description">A combination of backend, frontend, desktop, database, reporting, cloud and development technologies.</p>
+                </div>
+                <div class="skills-grid">
+                    <!-- Backend -->
+                    <div class="skill-card">
+                        <div class="skill-icon"><i class="bi bi-server"></i></div>
+                        <h3>Backend Development</h3>
+                        <div class="skill-list">
+                            <span class="skill-tag">C#</span>
+                            <span class="skill-tag">.NET</span>
+                            <span class="skill-tag">.NET Core</span>
+                            <span class="skill-tag">ASP.NET Core</span>
+                            <span class="skill-tag">MVC</span>
+                            <span class="skill-tag">Web API</span>
+                            <span class="skill-tag">Entity Framework</span>
+                            <span class="skill-tag">Entity Framework Core</span>
+                        </div>
+                    </div>
+                    <!-- Frontend -->
+                    <div class="skill-card">
+                        <div class="skill-icon"><i class="bi bi-window"></i></div>
+                        <h3>Frontend Development</h3>
+                        <div class="skill-list">
+                            <span class="skill-tag">HTML5</span>
+                            <span class="skill-tag">CSS3</span>
+                            <span class="skill-tag">JavaScript</span>
+                            <span class="skill-tag">jQuery</span>
+                            <span class="skill-tag">Bootstrap</span>
+                            <span class="skill-tag">Angular</span>
+                        </div>
+                    </div>
+                    <!-- Desktop -->
+                    <div class="skill-card">
+                        <div class="skill-icon"><i class="bi bi-pc-display"></i></div>
+                        <h3>Desktop Development</h3>
+                        <div class="skill-list">
+                            <span class="skill-tag">WinForms</span>
+                            <span class="skill-tag">WPF</span>
+                            <span class="skill-tag">Windows Applications</span>
+                            <span class="skill-tag">C#</span>
+                            <span class="skill-tag">.NET</span>
+                        </div>
+                    </div>
+                    <!-- Database -->
+                    <div class="skill-card">
+                        <div class="skill-icon"><i class="bi bi-database"></i></div>
+                        <h3>Database</h3>
+                        <div class="skill-list">
+                            <span class="skill-tag">SQL Server</span>
+                            <span class="skill-tag">PostgreSQL</span>
+                            <span class="skill-tag">T-SQL</span>
+                            <span class="skill-tag">Stored Procedures</span>
+                            <span class="skill-tag">Query Optimization</span>
+                        </div>
+                    </div>
+                    <!-- Reporting -->
+                    <div class="skill-card">
+                        <div class="skill-icon"><i class="bi bi-file-earmark-bar-graph"></i></div>
+                        <h3>Reporting & BI</h3>
+                        <div class="skill-list">
+                            <span class="skill-tag">RDLC Reports</span>
+                            <span class="skill-tag">Report Viewer</span>
+                            <span class="skill-tag">Reporting Services</span>
+                            <span class="skill-tag">Data Reports</span>
+                        </div>
+                    </div>
+                    <!-- Tools -->
+                    <div class="skill-card">
+                        <div class="skill-icon"><i class="bi bi-tools"></i></div>
+                        <h3>Tools & Collaboration</h3>
+                        <div class="skill-list">
+                            <span class="skill-tag">Visual Studio</span>
+                            <span class="skill-tag">Git</span>
+                            <span class="skill-tag">SVN</span>
+                            <span class="skill-tag">Postman</span>
+                            <span class="skill-tag">Jira</span>
+                        </div>
+                    </div>
+                    <!-- Azure -->
+                    <div class="skill-card">
+                        <div class="skill-icon"><i class="bi bi-cloud"></i></div>
+                        <h3>Cloud & Azure</h3>
+                        <div class="skill-list">
+                            <span class="skill-tag">Microsoft Azure</span>
+                            <span class="skill-tag">Azure DevOps</span>
+                            <span class="skill-tag">CI/CD</span>
+                            <span class="skill-tag">Cloud Deployment</span>
+                        </div>
+                    </div>
+                    <!-- Architecture -->
+                    <div class="skill-card">
+                        <div class="skill-icon"><i class="bi bi-diagram-3"></i></div>
+                        <h3>Architecture & Practices</h3>
+                        <div class="skill-list">
+                            <span class="skill-tag">REST APIs</span>
+                            <span class="skill-tag">OOP</span>
+                            <span class="skill-tag">SOLID</span>
+                            <span class="skill-tag">Layered Architecture</span>
+                            <span class="skill-tag">Agile</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- ============================================================
+        EXPERIENCE
+        ============================================================ -->
+        <section id="experience">
+            <div class="container">
+                <div class="section-header">
+                    <div class="section-label">Experience</div>
+                    <h2 class="section-title">4+ years of building enterprise software.</h2>
+                    <p class="section-description">
+                        Professional software development experience since June 2022, specializing in .NET full stack
+                        development, enterprise applications, tolling systems, APIs, dashboards, desktop applications
+                        and reporting solutions.
+                    </p>
+                </div>
+                <div class="experience-list">
+                    <div class="experience-card">
+                        <div class="experience-top">
+                            <div>
+                                <h3>.NET Core Full Stack Developer</h3>
+                                <div class="company">Arya Omnitalk Wireless Solutions Private Limited</div>
+                            </div>
+                            <div class="experience-date">
+                                Jun 2022 – Present<br>
+                                <strong>4+ Years</strong>
+                            </div>
+                        </div>
+                        <p>
+                            Working on enterprise software solutions using C#, .NET Core, ASP.NET Core, Web API, SQL Server
+                            and modern frontend technologies. Involved in development of tolling systems, dashboards,
+                            Windows applications, reporting solutions and business-critical applications.
+                            <br><br>
+                            Working across application development, database integration, REST APIs, frontend development,
+                            reporting and enterprise application workflows.
+                        </p>
+                        <div class="experience-tech">
+                            <span>C#</span>
+                            <span>.NET</span>
+                            <span>.NET Core</span>
+                            <span>ASP.NET Core</span>
+                            <span>Web API</span>
+                            <span>SQL Server</span>
+                            <span>Entity Framework</span>
+                            <span>Angular</span>
+                            <span>JavaScript</span>
+                            <span>jQuery</span>
+                            <span>Bootstrap</span>
+                            <span>WinForms</span>
+                            <span>WPF</span>
+                            <span>RDLC</span>
+                            <span>Postman</span>
+                            <span>Azure</span>
+                            <span>Jira</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- ============================================================
+        PROJECTS
+        ============================================================ -->
+        <section id="projects">
+            <div class="container">
+                <div class="section-header">
+                    <div class="section-label">Featured Projects</div>
+                    <h2 class="section-title">Selected work.</h2>
+                    <p class="section-description">
+                        Enterprise systems, dashboards, migration projects, tolling solutions and reporting applications
+                        developed using the .NET ecosystem.
+                    </p>
+                </div>
+                <div class="projects-grid">
+                    <!-- MLFF Tolling System -->
+                    <div class="project-card featured">
+                        <div class="project-badge">Major Project</div>
+                        <h3>MLFF Tolling System</h3>
+                        <p>
+                            A major enterprise Multi-Lane Free Flow (MLFF) Tolling System designed for modern tolling operations.
+                            <br><br>
+                            The system involves transaction processing, plaza and lane operations, vehicle identification,
+                            ANPR-related workflows, reconciliation, reporting and operational monitoring.
+                            <br><br>
+                            Worked across the application stack, including backend development, REST APIs, database operations
+                            and frontend modules. The project involves development and integration of business-critical
+                            tolling workflows.
+                        </p>
+                        <div class="project-tech">
+                            <span>C#</span>
+                            <span>.NET Core</span>
+                            <span>ASP.NET Core</span>
+                            <span>Web API</span>
+                            <span>SQL Server</span>
+                            <span>Entity Framework</span>
+                            <span>HTML5</span>
+                            <span>CSS3</span>
+                            <span>JavaScript</span>
+                            <span>jQuery</span>
+                            <span>Bootstrap</span>
+                            <span>Angular</span>
+                            <span>Postman</span>
+                            <span>REST API</span>
+                            <span>Git</span>
+                            <span>SVN</span>
+                        </div>
+                    </div>
+                    <!-- Mapple Dashboard UI -->
+                    <div class="project-card">
+                        <div class="project-badge">Dashboard UI</div>
+                        <h3>Mapple Dashboard UI</h3>
+                        <p>
+                            Designed and developed a modern enterprise dashboard interface with structured cards, summary
+                            sections, plaza-wise information, lane-level data and operational statistics.
+                            <br><br>
+                            Focused on presenting complex business data in a clean, responsive and user-friendly interface.
+                        </p>
+                        <div class="project-tech">
+                            <span>HTML5</span>
+                            <span>CSS3</span>
+                            <span>JavaScript</span>
+                            <span>jQuery</span>
+                            <span>Bootstrap</span>
+                            <span>Angular</span>
+                            <span>Responsive UI</span>
+                            <span>Dashboard Design</span>
+                        </div>
+                    </div>
+                    <!-- AVC Migration -->
+                    <div class="project-card">
+                        <div class="project-badge">Migration</div>
+                        <h3>AVC Migration Project</h3>
+                        <p>
+                            Worked on an AVC migration project involving application and system-level migration activities,
+                            database integration and implementation of required business workflows within the .NET ecosystem.
+                        </p>
+                        <div class="project-tech">
+                            <span>C#</span>
+                            <span>.NET</span>
+                            <span>SQL Server</span>
+                            <span>Web API</span>
+                            <span>Database Migration</span>
+                            <span>Integration</span>
+                        </div>
+                    </div>
+                    <!-- RDLC Reports -->
+                    <div class="project-card">
+                        <div class="project-badge">Reporting</div>
+                        <h3>RDLC Reports for HTMS Projects</h3>
+                        <p>
+                            Developed and maintained RDLC-based reporting solutions for HTMS projects.
+                            <br><br>
+                            Worked on report layouts, datasets, parameters, expressions, database queries and report
+                            generation for enterprise operational requirements.
+                        </p>
+                        <div class="project-tech">
+                            <span>RDLC</span>
+                            <span>Report Viewer</span>
+                            <span>C#</span>
+                            <span>.NET</span>
+                            <span>SQL Server</span>
+                            <span>Stored Procedures</span>
+                            <span>Reporting</span>
+                        </div>
+                    </div>
+                    <!-- Windows Application -->
+                    <div class="project-card">
+                        <div class="project-badge">Desktop Application</div>
+                        <h3>Windows Application Development</h3>
+                        <p>
+                            Developed Windows-based enterprise applications using C#, WinForms and WPF, including business
+                            workflows, database integration, reporting and application-level functionality.
+                        </p>
+                        <div class="project-tech">
+                            <span>C#</span>
+                            <span>.NET</span>
+                            <span>WinForms</span>
+                            <span>WPF</span>
+                            <span>Windows Applications</span>
+                            <span>SQL Server</span>
+                            <span>RDLC</span>
+                        </div>
+                    </div>
+                    <!-- Enterprise Web Applications -->
+                    <div class="project-card">
+                        <div class="project-badge">Web Application</div>
+                        <h3>Enterprise Web Applications</h3>
+                        <p>
+                            Developed business-focused web applications with responsive dashboards, data management, API
+                            integrations, database-driven workflows and enterprise reporting functionality.
+                        </p>
+                        <div class="project-tech">
+                            <span>ASP.NET Core MVC</span>
+                            <span>Web API</span>
+                            <span>SQL Server</span>
+                            <span>JavaScript</span>
+                            <span>jQuery</span>
+                            <span>Bootstrap</span>
+                            <span>Angular</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- ============================================================
+        EDUCATION
+        ============================================================ -->
+        <section id="education">
+            <div class="container">
+                <div class="section-header">
+                    <div class="section-label">Education</div>
+                    <h2 class="section-title">Academic background.</h2>
+                </div>
+                <div class="education-grid">
+                    <div class="education-card">
+                        <div class="education-icon"><i class="bi bi-mortarboard-fill"></i></div>
+                        <div>
+                            <h3>CDAC – Post Graduate Diploma in Advanced Computing</h3>
+                            <p>SunBeam Institute of Information Technology, Pune-Karad</p>
+                            <small>PG-DAC</small>
+                        </div>
+                    </div>
+                    <div class="education-card">
+                        <div class="education-icon"><i class="bi bi-book"></i></div>
+                        <div>
+                            <h3>Bachelor's Degree</h3>
+                            <p>Computer / Information Technology</p>
+                            <small>Academic Background</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- ============================================================
+        CONTACT
+        ============================================================ -->
+        <section id="contact" class="contact">
+            <div class="container">
+                <div class="contact-box">
+                    <div>
+                        <h2>Let's build something useful.</h2>
+                        <p>Interested in .NET development, enterprise applications or software engineering opportunities?</p>
+                    </div>
+                    <div class="contact-links">
+                        <a href="mailto:your-email@example.com" class="contact-link">
+                            <i class="bi bi-envelope"></i> Email
+                        </a>
+                        <a href="https://github.com/SaurabhGhodekar" target="_blank" rel="noopener" class="contact-link">
+                            <i class="bi bi-github"></i> GitHub
+                        </a>
+                        <a href="https://www.linkedin.com/in/saurabh-ghodekar/" target="_blank" rel="noopener" class="contact-link">
+                            <i class="bi bi-linkedin"></i> LinkedIn
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- ============================================================
+    FOOTER
+    ============================================================ -->
+    <footer>
+        <div class="container footer-inner">
+            <span>&copy; 2026 Saurabh Ghodekar. All rights reserved.</span>
+            <span>.NET Full Stack Developer • 4+ Years Experience</span>
         </div>
-
-    </div>
-
-</section>
-
-
-<!-- =========================================================
-     CONTACT
-========================================================== -->
-
-<section id="contact"
-         class="contact">
-
-    <div class="container">
-
-
-        <div class="contact-box">
-
-
-            <div>
-
-                <h2>
-                    Let's build something useful.
-                </h2>
-
-
-                <p>
-
-                    Interested in .NET development,
-                    enterprise applications or
-                    software engineering opportunities?
-
-                </p>
-
-            </div>
-
-
-            <div class="contact-links">
-
-
-                <a href="mailto:your-email@example.com"
-                   class="contact-link">
-
-                    <i class="bi bi-envelope"></i>
-
-                    Email
-
-                </a>
-
-
-                <a href="https://github.com/SaurabhGhodekar"
-                   target="_blank"
-                   rel="noopener"
-                   class="contact-link">
-
-                    <i class="bi bi-github"></i>
-
-                    GitHub
-
-                </a>
-
-
-                <a href="https://www.linkedin.com/in/saurabh-ghodekar/"
-                   target="_blank"
-                   rel="noopener"
-                   class="contact-link">
-
-                    <i class="bi bi-linkedin"></i>
-
-                    LinkedIn
-
-                </a>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-</main>
-
-
-<!-- =========================================================
-     FOOTER
-========================================================== -->
-
-<footer>
-
-    <div class="container footer-inner">
-
-        <span>
-
-            © 2026 Saurabh Ghodekar.
-            All rights reserved.
-
-        </span>
-
-
-        <span>
-
-            .NET Full Stack Developer
-            • 4+ Years Experience
-
-        </span>
-
-    </div>
-
-</footer>
-
-
-<!-- =========================================================
-     JAVASCRIPT
-========================================================== -->
-
-<script>
-
-
-    /* =====================================================
-       ACTIVE NAVIGATION
-    ====================================================== */
-
-    const sections =
-        document.querySelectorAll("section");
-
-
-    const navLinks =
-        document.querySelectorAll(".nav-links a");
-
-
-    window.addEventListener(
-        "scroll",
-        () => {
-
+    </footer>
+    <!-- ============================================================
+    JAVASCRIPT
+    ============================================================ -->
+    <script>
+        // Active Navigation
+        const sections = document.querySelectorAll("section");
+        const navLinks = document.querySelectorAll(".nav-links a");
+        window.addEventListener("scroll", () => {
             let current = "";
-
-
-            sections.forEach(
-                section => {
-
-                    const sectionTop =
-                        section.offsetTop - 130;
-
-
-                    if (
-                        window.scrollY >=
-                        sectionTop
-                    ) {
-
-                        current =
-                            section.getAttribute(
-                                "id"
-                            );
-
-                    }
-
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 130;
+                if (window.scrollY >= sectionTop) {
+                    current = section.getAttribute("id");
                 }
-            );
-
-
-            navLinks.forEach(
-                link => {
-
-                    link.classList.remove(
-                        "active"
-                    );
-
-
-                    if (
-                        link.getAttribute(
-                            "href"
-                        ) === "#" + current
-                    ) {
-
-                        link.classList.add(
-                            "active"
-                        );
-
-                    }
-
+            });
+            navLinks.forEach(link => {
+                link.classList.remove("active");
+                if (link.getAttribute("href") === "#" + current) {
+                    link.classList.add("active");
                 }
-            );
-
-        }
-    );
-
-
-    /* =====================================================
-       SMOOTH SCROLL
-    ====================================================== */
-
-    document
-        .querySelectorAll(
-            'a[href^="#"]'
-        )
-        .forEach(
-            anchor => {
-
-                anchor.addEventListener(
-                    "click",
-                    function (e) {
-
-                        const target =
-                            document.querySelector(
-                                this.getAttribute(
-                                    "href"
-                                )
-                            );
-
-
-                        if (target) {
-
-                            e.preventDefault();
-
-
-                            target.scrollIntoView(
-                                {
-                                    behavior:
-                                        "smooth",
-
-                                    block:
-                                        "start"
-                                }
-                            );
-
-                        }
-
-                    }
-                );
-
-            }
-        );
-
-
-</script>
-
-
+            });
+        });
+        // Smooth Scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener("click", function(e) {
+                const target = document.querySelector(this.getAttribute("href"));
+                if (target) {
+                    e.preventDefault();
+                    target.scrollIntoView({ behavior: "smooth", block: "start" });
+                }
+            });
+        });
+    </script>
 </body>
-
 </html>
